@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import styled from "styled-components";
 
+import calculateSellerNetSheet from "./calculateSellerNetSheet";
 import FormInput from "./FormInput";
+import PrimaryButton from "./PrimaryButton";
+import Report from "./Report";
 import colors from "./styles/colors";
 
 const Container = styled.div`
-  margin: 40px;
+  margin: 40px 4%;
 `;
 
 const Divider = styled.div`
@@ -24,6 +27,8 @@ const Header = styled.h4`
 `;
 
 const SellerCalculator = () => {
+  const [showReport, setShowReport] = useState(false);
+
   const [offerId, setOfferId] = useState(null);
   const offerIdLabel = "Offer ID";
   const offerIdType = "string";
@@ -236,8 +241,100 @@ const SellerCalculator = () => {
   const itemizedCreditsType = "itemizedList";
   const itemizedCreditsHelp = null;
 
+  const report = useMemo(() => {
+    if (showReport) {
+      return calculateSellerNetSheet({
+        offerId,
+        offerAmount,
+        offerDate,
+        useDifferentSaleAmount,
+        differentSaleAmount,
+        closingDate,
+        mortgagePayoffAmount,
+        sellerPaysTitleInsurance,
+        annualTax,
+        closingFee,
+        useIndividualCommissions,
+        combinedCommissionPercent,
+        sellerCommissionPercent,
+        buyerCommissionPercent,
+        sellerFullName,
+        addressLine1,
+        addressLine2,
+        addressCity,
+        addressState,
+        addressZip,
+        specialAssessment,
+        agentFees,
+        homeWarranty,
+        itemizedConcessions,
+        calcForMeSellerPortionHoa,
+        sellerPortionNextHoaPayment,
+        hoaPaymentFrequency,
+        hoaDues,
+        nextHoaPaymentDate,
+        wireFee,
+        itemizedCharges,
+        itemizedCredits,
+      });
+    }
+    return {};
+  }, [
+    showReport,
+    offerId,
+    offerAmount,
+    offerDate,
+    useDifferentSaleAmount,
+    differentSaleAmount,
+    closingDate,
+    mortgagePayoffAmount,
+    sellerPaysTitleInsurance,
+    annualTax,
+    closingFee,
+    useIndividualCommissions,
+    combinedCommissionPercent,
+    sellerCommissionPercent,
+    buyerCommissionPercent,
+    sellerFullName,
+    addressLine1,
+    addressLine2,
+    addressCity,
+    addressState,
+    addressZip,
+    specialAssessment,
+    agentFees,
+    homeWarranty,
+    itemizedConcessions,
+    calcForMeSellerPortionHoa,
+    sellerPortionNextHoaPayment,
+    hoaPaymentFrequency,
+    hoaDues,
+    nextHoaPaymentDate,
+    wireFee,
+    itemizedCharges,
+    itemizedCredits,
+  ]);
+
+  if (showReport) {
+    return (
+      <Container>
+        <Report
+          report={report}
+          title="Seller Net Sheet (Estimated Closing Statement)"
+          onClose={() => setShowReport(false)}
+        />
+      </Container>
+    );
+  }
+
   return (
     <Container>
+      <PrimaryButton onClick={() => setShowReport(true)}>
+        Calculate
+      </PrimaryButton>
+
+      <Divider />
+
       <FormInput
         key="seller-full-name"
         type={sellerFullNameType}
@@ -615,6 +712,12 @@ const SellerCalculator = () => {
         onChange={setItemizedCredits}
         help={itemizedCreditsHelp}
       />
+
+      <Divider />
+
+      <PrimaryButton onClick={() => setShowReport(true)}>
+        Calculate
+      </PrimaryButton>
     </Container>
   );
 };

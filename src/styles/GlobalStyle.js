@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: border-box;
     font-family: 'IBM Plex Sans';
+    font-size: 16px;
   }  
 
   body {
