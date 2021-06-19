@@ -5,11 +5,10 @@ import colors from "./colors";
 const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: border-box;
+    font-family: 'IBM Plex Sans';
   }  
 
   body {
-    font-family: 'IBM Plex Sans';
-    box-sizing: border-box;
     margin: 0;
   }
 

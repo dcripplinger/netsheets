@@ -2,16 +2,26 @@ import { useState } from "react";
 import styled from "styled-components";
 
 import FormInput from "./FormInput";
+import colors from "./styles/colors";
 
 const Container = styled.div`
   margin: 40px;
 `;
 
 const Divider = styled.div`
-  height: 24px;
+  height: 16px;
 `;
 
 const singleIndentMargin = "0 0 0 40px";
+
+const Header = styled.h4`
+  border-bottom: solid ${colors.black} 1px;
+  margin-top: 56px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;
 
 const SellerCalculator = () => {
   const [offerId, setOfferId] = useState(null);
@@ -229,6 +239,17 @@ const SellerCalculator = () => {
   return (
     <Container>
       <FormInput
+        key="seller-full-name"
+        type={sellerFullNameType}
+        value={sellerFullName}
+        label={sellerFullNameLabel}
+        onChange={setSellerFullName}
+        help={sellerFullNameHelp}
+      />
+
+      <Header>OFFER</Header>
+
+      <FormInput
         key="offer-id"
         type={offerIdType}
         value={offerId}
@@ -298,116 +319,7 @@ const SellerCalculator = () => {
         help={closingDateHelp}
       />
 
-      <Divider />
-
-      <FormInput
-        key="mortgage-payoff-amount"
-        type={mortgagePayoffAmountType}
-        value={mortgagePayoffAmount}
-        label={mortgagePayoffAmountLabel}
-        onChange={setMortgagePayoffAmount}
-        help={mortgagePayoffAmountHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="seller-pays-title-insurance"
-        type={sellerPaysTitleInsuranceType}
-        value={sellerPaysTitleInsurance}
-        label={sellerPaysTitleInsuranceLabel}
-        onChange={setSellerPaysTitleInsurance}
-        help={sellerPaysTitleInsuranceHelp}
-        options={sellerPaysTitleInsuranceOptions}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="annual-tax"
-        type={annualTaxType}
-        value={annualTax}
-        label={annualTaxLabel}
-        onChange={setAnnualTax}
-        help={annualTaxHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="closing-fee"
-        type={closingFeeType}
-        value={closingFee}
-        label={closingFeeLabel}
-        onChange={setClosingFee}
-        help={closingFeeHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="use-individual-commissions"
-        type={useIndividualCommissionsType}
-        value={useIndividualCommissions}
-        label={useIndividualCommissionsLabel}
-        onChange={setUseIndividualCommissions}
-        help={useIndividualCommissionsHelp}
-        options={useIndividualCommissionsOptions}
-      />
-
-      {useIndividualCommissions ? (
-        <>
-          <Divider />
-
-          <FormInput
-            key="seller-commision-percent"
-            type={sellerCommissionPercentType}
-            value={sellerCommissionPercent}
-            label={sellerCommissionPercentLabel}
-            onChange={setSellerCommissionPercent}
-            help={sellerCommissionPercentHelp}
-            margin={singleIndentMargin}
-          />
-          <Divider />
-
-          <FormInput
-            key="buyer-commission-percent"
-            type={buyerCommissionPercentType}
-            value={buyerCommissionPercent}
-            label={buyerCommissionPercentLabel}
-            onChange={setBuyerCommissionPercent}
-            help={buyerCommissionPercentHelp}
-            margin={singleIndentMargin}
-          />
-        </>
-      ) : (
-        <>
-          <Divider />
-
-          <FormInput
-            key="combined-commission-percent"
-            type={combinedCommissionPercentType}
-            value={combinedCommissionPercent}
-            label={combinedCommissionPercentLabel}
-            onChange={setCombinedCommissionPercent}
-            help={combinedCommissionPercentHelp}
-            margin={singleIndentMargin}
-          />
-        </>
-      )}
-
-      <Divider />
-
-      <FormInput
-        key="seller-full-name"
-        type={sellerFullNameType}
-        value={sellerFullName}
-        label={sellerFullNameLabel}
-        onChange={setSellerFullName}
-        help={sellerFullNameHelp}
-      />
-
-      <Divider />
+      <Header>SUBJECT PROPERTY INFORMATION</Header>
 
       <FormInput
         key="address-line-1"
@@ -462,6 +374,28 @@ const SellerCalculator = () => {
         help={addressZipHelp}
       />
 
+      <Header>PROPERTY OBLIGATIONS</Header>
+
+      <FormInput
+        key="mortgage-payoff-amount"
+        type={mortgagePayoffAmountType}
+        value={mortgagePayoffAmount}
+        label={mortgagePayoffAmountLabel}
+        onChange={setMortgagePayoffAmount}
+        help={mortgagePayoffAmountHelp}
+      />
+
+      <Divider />
+
+      <FormInput
+        key="annual-tax"
+        type={annualTaxType}
+        value={annualTax}
+        label={annualTaxLabel}
+        onChange={setAnnualTax}
+        help={annualTaxHelp}
+      />
+
       <Divider />
 
       <FormInput
@@ -471,39 +405,6 @@ const SellerCalculator = () => {
         label={specialAssessmentLabel}
         onChange={setSpecialAssessment}
         help={specialAssessmentHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="agent-fees"
-        type={agentFeesType}
-        value={agentFees}
-        label={agentFeesLabel}
-        onChange={setAgentFees}
-        help={agentFeesHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="home-warranty"
-        type={homeWarrantyType}
-        value={homeWarranty}
-        label={homeWarrantyLabel}
-        onChange={setHomeWarranty}
-        help={homeWarrantyHelp}
-      />
-
-      <Divider />
-
-      <FormInput
-        key="itemized-concessions"
-        type={itemizedConcessionsType}
-        value={itemizedConcessions}
-        label={itemizedConcessionsLabel}
-        onChange={setItemizedConcessions}
-        help={itemizedConcessionsHelp}
       />
 
       <Divider />
@@ -573,6 +474,70 @@ const SellerCalculator = () => {
         </>
       )}
 
+      <Header>{"AGENT COMMISSIONS & TITLE FEES"}</Header>
+
+      <FormInput
+        key="use-individual-commissions"
+        type={useIndividualCommissionsType}
+        value={useIndividualCommissions}
+        label={useIndividualCommissionsLabel}
+        onChange={setUseIndividualCommissions}
+        help={useIndividualCommissionsHelp}
+        options={useIndividualCommissionsOptions}
+      />
+
+      {useIndividualCommissions ? (
+        <>
+          <Divider />
+
+          <FormInput
+            key="seller-commision-percent"
+            type={sellerCommissionPercentType}
+            value={sellerCommissionPercent}
+            label={sellerCommissionPercentLabel}
+            onChange={setSellerCommissionPercent}
+            help={sellerCommissionPercentHelp}
+            margin={singleIndentMargin}
+          />
+          <Divider />
+
+          <FormInput
+            key="buyer-commission-percent"
+            type={buyerCommissionPercentType}
+            value={buyerCommissionPercent}
+            label={buyerCommissionPercentLabel}
+            onChange={setBuyerCommissionPercent}
+            help={buyerCommissionPercentHelp}
+            margin={singleIndentMargin}
+          />
+        </>
+      ) : (
+        <>
+          <Divider />
+
+          <FormInput
+            key="combined-commission-percent"
+            type={combinedCommissionPercentType}
+            value={combinedCommissionPercent}
+            label={combinedCommissionPercentLabel}
+            onChange={setCombinedCommissionPercent}
+            help={combinedCommissionPercentHelp}
+            margin={singleIndentMargin}
+          />
+        </>
+      )}
+
+      <Divider />
+
+      <FormInput
+        key="closing-fee"
+        type={closingFeeType}
+        value={closingFee}
+        label={closingFeeLabel}
+        onChange={setClosingFee}
+        help={closingFeeHelp}
+      />
+
       <Divider />
 
       <FormInput
@@ -582,6 +547,51 @@ const SellerCalculator = () => {
         label={wireFeeLabel}
         onChange={setWireFee}
         help={wireFeeHelp}
+      />
+
+      <Divider />
+
+      <FormInput
+        key="seller-pays-title-insurance"
+        type={sellerPaysTitleInsuranceType}
+        value={sellerPaysTitleInsurance}
+        label={sellerPaysTitleInsuranceLabel}
+        onChange={setSellerPaysTitleInsurance}
+        help={sellerPaysTitleInsuranceHelp}
+        options={sellerPaysTitleInsuranceOptions}
+      />
+
+      <Header>{"MISCELLANEOUS FEES & CREDITS"}</Header>
+
+      <FormInput
+        key="agent-fees"
+        type={agentFeesType}
+        value={agentFees}
+        label={agentFeesLabel}
+        onChange={setAgentFees}
+        help={agentFeesHelp}
+      />
+
+      <Divider />
+
+      <FormInput
+        key="home-warranty"
+        type={homeWarrantyType}
+        value={homeWarranty}
+        label={homeWarrantyLabel}
+        onChange={setHomeWarranty}
+        help={homeWarrantyHelp}
+      />
+
+      <Divider />
+
+      <FormInput
+        key="itemized-concessions"
+        type={itemizedConcessionsType}
+        value={itemizedConcessions}
+        label={itemizedConcessionsLabel}
+        onChange={setItemizedConcessions}
+        help={itemizedConcessionsHelp}
       />
 
       <Divider />
