@@ -8,6 +8,7 @@ const Input = styled.input`
 const StringInput = ({ value, onChange, disabled }) => {
   const _onChange = (e) =>
     onChange(e.target.value === "" ? null : e.target.value);
+
   return (
     <Input
       type="text"

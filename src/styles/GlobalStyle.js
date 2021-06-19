@@ -3,6 +3,10 @@ import { createGlobalStyle } from "styled-components";
 import colors from "./colors";
 
 const GlobalStyle = createGlobalStyle`
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }  
+
   body {
     font-family: 'IBM Plex Sans';
     box-sizing: border-box;
@@ -29,6 +33,11 @@ const GlobalStyle = createGlobalStyle`
 
   button:active {
     border-style: none;
+  }
+
+  :focus-visible {
+    outline: dashed ${colors.lightBlue} 1px;
+    outline-offset: 1px;
   }
 `;
 
