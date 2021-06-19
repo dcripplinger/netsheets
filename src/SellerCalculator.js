@@ -229,6 +229,7 @@ const SellerCalculator = () => {
   return (
     <Container>
       <FormInput
+        key="offer-id"
         type={offerIdType}
         value={offerId}
         label={offerIdLabel}
@@ -239,6 +240,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="offer-amount"
         type={offerAmountType}
         value={offerAmount}
         label={offerAmountLabel}
@@ -249,6 +251,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="offer-date"
         type={offerDateType}
         value={offerDate}
         label={offerDateLabel}
@@ -259,6 +262,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="use-different-sale-amount"
         type={useDifferentSaleAmountType}
         value={useDifferentSaleAmount}
         label={useDifferentSaleAmountLabel}
@@ -272,6 +276,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="different-sale-amount"
             type={differentSaleAmountType}
             value={differentSaleAmount}
             label={differentSaleAmountLabel}
@@ -285,6 +290,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="closing-date"
         type={closingDateType}
         value={closingDate}
         label={closingDateLabel}
@@ -295,6 +301,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="mortgage-payoff-amount"
         type={mortgagePayoffAmountType}
         value={mortgagePayoffAmount}
         label={mortgagePayoffAmountLabel}
@@ -305,6 +312,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="seller-pays-title-insurance"
         type={sellerPaysTitleInsuranceType}
         value={sellerPaysTitleInsurance}
         label={sellerPaysTitleInsuranceLabel}
@@ -316,6 +324,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="annual-tax"
         type={annualTaxType}
         value={annualTax}
         label={annualTaxLabel}
@@ -326,6 +335,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="closing-fee"
         type={closingFeeType}
         value={closingFee}
         label={closingFeeLabel}
@@ -336,6 +346,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="use-individual-commissions"
         type={useIndividualCommissionsType}
         value={useIndividualCommissions}
         label={useIndividualCommissionsLabel}
@@ -349,6 +360,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="seller-commision-percent"
             type={sellerCommissionPercentType}
             value={sellerCommissionPercent}
             label={sellerCommissionPercentLabel}
@@ -359,6 +371,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="buyer-commission-percent"
             type={buyerCommissionPercentType}
             value={buyerCommissionPercent}
             label={buyerCommissionPercentLabel}
@@ -372,6 +385,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="combined-commission-percent"
             type={combinedCommissionPercentType}
             value={combinedCommissionPercent}
             label={combinedCommissionPercentLabel}
@@ -385,6 +399,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="seller-full-name"
         type={sellerFullNameType}
         value={sellerFullName}
         label={sellerFullNameLabel}
@@ -395,6 +410,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="address-line-1"
         type={addressLine1Type}
         value={addressLine1}
         label={addressLine1Label}
@@ -405,6 +421,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="address-line-2"
         type={addressLine2Type}
         value={addressLine2}
         label={addressLine2Label}
@@ -415,6 +432,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="address-city"
         type={addressCityType}
         value={addressCity}
         label={addressCityLabel}
@@ -425,6 +443,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="address-state"
         type={addressStateType}
         value={addressState}
         label={addressStateLabel}
@@ -435,6 +454,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="address-zip"
         type={addressZipType}
         value={addressZip}
         label={addressZipLabel}
@@ -445,6 +465,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="special-assessment"
         type={specialAssessmentType}
         value={specialAssessment}
         label={specialAssessmentLabel}
@@ -455,6 +476,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="agent-fees"
         type={agentFeesType}
         value={agentFees}
         label={agentFeesLabel}
@@ -465,6 +487,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="home-warranty"
         type={homeWarrantyType}
         value={homeWarranty}
         label={homeWarrantyLabel}
@@ -475,6 +498,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="itemized-concessions"
         type={itemizedConcessionsType}
         value={itemizedConcessions}
         label={itemizedConcessionsLabel}
@@ -485,6 +509,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="calc-for-me-seller-portion-hoa"
         type={calcForMeSellerPortionHoaType}
         value={calcForMeSellerPortionHoa}
         label={calcForMeSellerPortionHoaLabel}
@@ -498,6 +523,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="hoa-payment-frequency"
             type={hoaPaymentFrequencyType}
             value={hoaPaymentFrequency}
             label={hoaPaymentFrequencyLabel}
@@ -510,6 +536,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="next-hoa-payment-date"
             type={nextHoaPaymentDateType}
             value={nextHoaPaymentDate}
             label={nextHoaPaymentDateLabel}
@@ -521,6 +548,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="hoa-dues"
             type={hoaDuesType}
             value={hoaDues}
             label={hoaDuesLabel}
@@ -534,6 +562,7 @@ const SellerCalculator = () => {
           <Divider />
 
           <FormInput
+            key="seller-portion-next-hoa-payment"
             type={sellerPortionNextHoaPaymentType}
             value={sellerPortionNextHoaPayment}
             label={sellerPortionNextHoaPaymentLabel}
@@ -547,6 +576,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="wire-fee"
         type={wireFeeType}
         value={wireFee}
         label={wireFeeLabel}
@@ -557,6 +587,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="itemized-charges"
         type={itemizedChargesType}
         value={itemizedCharges}
         label={itemizedChargesLabel}
@@ -567,6 +598,7 @@ const SellerCalculator = () => {
       <Divider />
 
       <FormInput
+        key="itemized-credits"
         type={itemizedCreditsType}
         value={itemizedCredits}
         label={itemizedCreditsLabel}
